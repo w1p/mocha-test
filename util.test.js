@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=r9HdJ8P6GQI&t=398s&ab_channel=Academind
+
 //import functions from our util.js
 //const { TestScheduler } = require('jest');
 const { generateText, validateAndGenerate } = require('./util');
