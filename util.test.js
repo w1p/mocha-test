@@ -1,6 +1,7 @@
 //import functions from our util.js
 //const { TestScheduler } = require('jest');
-const { generateText } = require('./util');
+const { generateText, validateAndGenerate } = require('./util');
+const puppeteer = require('puppeteer');
 
 test('Ouput name and age from generateText', () => {
     //Actual testing code
@@ -18,3 +19,29 @@ test('Test null value with generateText', () => {
     const fakeText2 = generateText()
     expect(fakeText2).toBe('undefined (undefined years old)')
 });
+
+test('Test validateAndGenerate', () => {
+    const text = validateAndGenerate('Jane', 16)
+    expect(text).toBe('Jane (16 years old)')
+})
+
+/*
+test('Simulate the mouse clicking around', async () => {
+    const browser = await puppeteer.launch({
+        headless: false,
+        slowMo: 80,
+        args: ['--window-size=1920, 1080',
+            '--disable-gpu',
+            '--disable-dev-shm-usage',
+            '--disable-setuid-sandbox',
+            '--no-first-run',
+            '--no-sandbox',
+            '--no-zygote',
+            '--single-process',]
+
+    })
+    const page = await browser.newPage();
+    await page.goto('file:////home/william/src/node/js-testing-introduction/index.html')
+
+})
+*/
